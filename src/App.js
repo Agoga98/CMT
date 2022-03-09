@@ -5,7 +5,7 @@ import Login from './pages/Login';
 import NewCustomer from './pages/NewCustomer';
 import Register from './pages/Register';
 import Statistics from './pages/Statistics';
-console.log("change");
+
 const App = () => {
     
 

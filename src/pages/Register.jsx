@@ -21,8 +21,8 @@ function Register() {
   const dispatch = useDispatch()
 
   const {user, isLoading, isError, isSuccess, message} = useSelector(
-    (state) => state.auth
-  )
+    (state) => state.auth //get data from localstore
+  ) 
 
   useEffect(() => {
     if(isError)
@@ -77,7 +77,7 @@ function Register() {
       </section>
 
       <section className="form">
-        <form>
+      <form onSubmit={onSubmit}>
           <div className="form-group">
             <input type="text" className="form-control" id="name" name='name' value={name} placeholder='Bitte Namen eingeben' onChange={onChange} />
           </div>
@@ -91,9 +91,7 @@ function Register() {
             <input type="password" className="form-control" id="password2" name='password2' value={password2} placeholder='Passwort bestätigen' onChange={onChange} />
           </div>
           <div className="form-group">
-            <form onSubmit={onSubmit}>
-              <button type="submit" className="btn btn-block">Bestätigen</button>
-            </form>
+            <button type="submit" className="btn btn-block">Bestätigen</button>
           </div>
         </form>
       </section>

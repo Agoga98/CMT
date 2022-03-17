@@ -1,4 +1,4 @@
-// All off the HTTP stuff
+// All off the HTTP-Request stuff
 import axios from 'axios'
 
 const API_URL = '/api/users/'

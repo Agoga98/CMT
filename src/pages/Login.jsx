@@ -31,7 +31,7 @@ function Login() {
     }
 
     if(isSuccess || user){
-      navigate('/login')
+      navigate('/')
     }
 
     dispatch(reset())
@@ -70,7 +70,7 @@ function Login() {
       </section>
 
       <section className="form">
-        <form>
+      <form onSubmit={onSubmit}>
           <div className="form-group">
             <input type="text" className="form-control" id="email" name='email' value={email} placeholder='Bitte Email eingeben' onChange={onChange} />
           </div>
@@ -78,9 +78,7 @@ function Login() {
             <input type="password" className="form-control" id="password" name='password' value={password} placeholder='Bitte Passwort eingeben' onChange={onChange} />
           </div>
           <div className="form-group">
-            <form onSubmit={onSubmit}>
-              <button type="submit" className="btn btn-block">Anmelden</button>
-            </form>
+            <button type="submit" className="btn btn-block">Anmelden</button>
           </div>
         </form>
       </section>

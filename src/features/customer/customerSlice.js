@@ -1,6 +1,5 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import customerService from './customerService'
-import axios from 'axios'
 
 const API_URL = '/api/customers/'
 
@@ -23,6 +22,23 @@ export const getallCustomers = createAsyncThunk('customer/getAll',
 )
 
 //create customer
+export const createCustomer = createAsyncThunk('customer/create', 
+    async (customerdata, thunkAPI) => {
+        try {
+            const token = thunkAPI.getState().auth.user.token
+            return await customerService.createCustomer(customerdata, token)
+          } catch (error) {
+            const message =
+              (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+              error.message ||
+              error.toString()
+            return thunkAPI.rejectWithValue(message)
+          }
+    }
+)
+
 //update customer
 //delete customer
 
@@ -51,6 +67,19 @@ export const customerSlice = createSlice({
                 state.customers = action.payload
             })
             .addCase(getallCustomers.rejected, (state, action) => {
+                state.isLoading = false
+                state.isError = true
+                state.message = action.payload
+            })
+            .addCase(createCustomer.pending, (state) => {
+                state.isLoading = true
+            })
+            .addCase(createCustomer.fulfilled, (state, action) => {
+                state.isLoading = false
+                state.isSuccess = true
+                state.message= action.payload
+            })
+            .addCase(createCustomer.rejected, (state, action) => {
                 state.isLoading = false
                 state.isError = true
                 state.message = action.payload

@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const API_URL = '/api/customer/'
 
-// Get user goals
+// Get customers
 const getCustomers = async (token) => {
     const config = {
       headers: {

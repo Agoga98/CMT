@@ -71,6 +71,11 @@ h3 {
   margin-bottom: 60px;
 }
 
+.header-menu {
+  display: flex;
+  align-items: center;
+}
+
 .header ul {
   display: flex;
   align-items: center;

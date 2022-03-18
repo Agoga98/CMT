@@ -1,4 +1,5 @@
-import {FaSignInAlt, FaSignOutAlt, FaUser} from 'react-icons/fa'
+import {FaSignInAlt, FaSignOutAlt, FaUser, FaUserPlus, FaHome} from 'react-icons/fa'
+import {IoStatsChart, IoSettings} from 'react-icons/io5'
 import {Link, useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {logout, reset} from '../features/auth/authSlice'
@@ -17,11 +18,40 @@ const onLogout = () => {
   return (
     <header className='header'>
         <div>
-            <Link to='/'>Blakaj Fenster und Türen</Link>
+            <>Blakaj Fenster und Türen</>
         </div>
+        {user ? (
+        <div className='header-menu'>
+            <ul>
+                <li>
+                    <Link to='/'>
+                        <FaHome /> Home    
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/newcustomer'>
+                        <FaUserPlus /> Neuer Kunde    
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/statistics'>
+                        <IoStatsChart /> Statistik    
+                    </Link>
+                </li>
+                <li>
+                    <Link to='/settings'>
+                        <IoSettings /> Einstellungen    
+                    </Link>
+                </li>
+            </ul>
+        </div>
+        ) : 
+        (<></>)
+        }
         <ul>
             {user ? 
             (<>
+                
                 <li>
                     <button className='btn' to='/login' onClick={onLogout}>
                         <FaSignInAlt/> Logout    

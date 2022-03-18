@@ -56,15 +56,13 @@ h3 {
 }
 
 .container {
-<<<<<<< HEAD
   width: 100%;
   min-width: 1200px; 
   margin: 0 auto;
-=======
   max-width: 1200px;
   margin: 10px;
->>>>>>> main
-  padding: 0 20px;
+
+   padding: 0 20px;
   text-align: center;
 }
 
@@ -81,6 +79,8 @@ h3 {
   display: flex;
   align-items: center;
 }
+
+
 
 .header ul {
   display: flex;
@@ -218,7 +218,7 @@ h3 {
   border: 8px solid;
   border-color: #000 transparent #555 transparent;
   border-radius: 50%;
-  animation: spin 1.2s linear infinite;
+  animation: spin 1.2s linear infinite;   
 }
 
 .bgc{

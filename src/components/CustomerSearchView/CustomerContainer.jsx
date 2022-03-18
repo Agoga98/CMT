@@ -6,9 +6,9 @@ function CustomerContainer() {
   const [searchTerm, setSearchTerm] = useState("")
 
   return (    
-    <div className="customer-searchbox">
-      <input type="text" placeholder="Suchen..." onChange={event => {setSearchTerm(event.target.value)}}/>
-      <div className='customer-item-container'>
+    <div className="customer-searchbox bgc brd">
+      <input class="search" type="text" placeholder="Suchen..." onChange={event => {setSearchTerm(event.target.value)}}/>
+      <div className='customer-item-container '>
         {
           jsondata.filter((val) => {
             if(searchTerm == ""){

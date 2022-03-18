@@ -1,7 +1,7 @@
 
 function BauvorhabenContainer() {
   return (
-    <div className="customer-bvh-box">
+    <div className="customer-bvh-box bgc brd">
         Bauvorhaben anzeige
     </div>
   )

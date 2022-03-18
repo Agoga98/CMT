@@ -2,7 +2,7 @@ import {useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import { useSelector} from 'react-redux'
 
-function Statistics() {
+function Settings() {
   const navigate = useNavigate()
 
   const {user} = useSelector((state) => state.auth)
@@ -17,8 +17,8 @@ function Statistics() {
   }, [user, navigate])
   
   return (
-    <div>Statistics</div>
+    <div>Settings</div>
   )
 }
 
-export default Statistics
+export default Settings

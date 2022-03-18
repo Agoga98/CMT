@@ -1,28 +1,56 @@
 import {useState} from 'react' 
 import CustomerViewItem from './CustomerViewItem'
-import jsondata from '../../mock_data.json'
+import {useEffect} from 'react'
+import {useDispatch, useSelector} from 'react-redux'
+import Spinner from '../../components/Spinner'
+import {getallCustomers, reset} from '../../features/customer/customerSlice'
 
 function CustomerContainer() {
   const [searchTerm, setSearchTerm] = useState("")
+
+  const dispatch = useDispatch() 
+
+  const {user} = useSelector((state) => state.auth)
+  const { customers, isLoading, isError, message } = useSelector(
+    (state) => state.customers
+  )
+
+  useEffect(() => {
+    if (isError) {
+      console.log(message)
+    }
+
+    dispatch(getallCustomers())
+
+    return() => {
+      dispatch(reset())
+    }
+
+  }, [user, isError, message, dispatch])
+
+  if (isLoading) {
+    return <Spinner />
+  }
 
   return (    
     <div className="customer-searchbox bgc brd">
       <input class="search" type="text" placeholder="Suchen..." onChange={event => {setSearchTerm(event.target.value)}}/>
       <div className='customer-item-container '>
         {
-          jsondata.filter((val) => {
+          customers.filter((val) => {
             if(searchTerm == ""){
               return val
             }
-            else if(val.name.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                    val.email.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                    val.phonenumber.toLowerCase().includes(searchTerm.toLowerCase()) ||
-                    val.id.toLowerCase().includes(searchTerm.toLowerCase()))
+            else if(val.LastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    val.FirstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    val.Email.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                    val.TelNum.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    val.CustomerID.toLowerCase().includes(searchTerm.toLowerCase()))
             {
               return val
             }
           }).map((val, key) => {
-            return <CustomerViewItem name={val.name} email={val.email} phonenumber={val.phonenumber} id={val.id}/>
+            return <CustomerViewItem lastname={val.LastName} firstname={val.FirstName} email={val.Email} phonenumber={val.TelNum} id={val.CustomerID}/>
           })
         }
       </div>

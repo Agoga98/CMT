@@ -56,9 +56,14 @@ h3 {
 }
 
 .container {
+<<<<<<< HEAD
   width: 100%;
   min-width: 1200px; 
   margin: 0 auto;
+=======
+  max-width: 1200px;
+  margin: 10px;
+>>>>>>> main
   padding: 0 20px;
   text-align: center;
 }
@@ -70,6 +75,11 @@ h3 {
   padding: 20px 0;
   border-bottom: 1px solid #e6e6e6;
   margin-bottom: 60px;
+}
+
+.header-menu {
+  display: flex;
+  align-items: center;
 }
 
 .header ul {

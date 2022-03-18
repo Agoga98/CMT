@@ -6,6 +6,7 @@ import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
 import NewCustomer from './pages/NewCustomer';
 import Register from './pages/Register';
+import Settings from './pages/Settings';
 import Statistics from './pages/Statistics';
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
                         <Route path='/login' element={<Login/>}/>
                         <Route path='/register' element={<Register/>}/>
                         <Route path='/newcustomer' element={<NewCustomer/>}/>
+                        <Route path='/settings' element={<Settings/>}/>
                         <Route path='/statistics' element={<Statistics/>}/>
                     </Routes>
                 </div> 

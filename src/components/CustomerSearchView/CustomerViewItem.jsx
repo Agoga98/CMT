@@ -1,10 +1,10 @@
 import {FaUserTie} from 'react-icons/fa'
 
-function CustomerViewItem({id, name, email, phonenumber}) {
+function CustomerViewItem({id, firstname, lastname, email, phonenumber}) {
   return (
     <div className="customer-view-item bgc-2 brd white-font">
         <FaUserTie className='customer-view-item-icon'/>
-        <h4>{name}</h4>
+        <h4>{lastname} {firstname}</h4>
         <ul>
             <li>{email}</li>
             <li>{phonenumber}</li>

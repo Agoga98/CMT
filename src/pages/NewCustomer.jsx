@@ -92,8 +92,19 @@ function NewCustomer() {
           <div className="form-group">
             <PhoneInput defaultCountry='AT' placeholder="Bitte Telefonnummer eingeben" id="TelNum" name='TelNum' value={TelNum} onChange={onChange}/>
           </div>
+          <h4>Adresse</h4>
           <div className="form-group">
-            <button type="submit" className="btn btn-block">Bestätigen</button>
+            <input type="text" className="form-control" id="Adress" name='Adress' value={Adress} placeholder='Bitte Adresse und Hausnummer eingeben' onChange={onChange} />
+          </div>
+          <div className="form-group">
+            <input type="number" min="0" max="99999" className="form-control" id="PostalCode" name='PostalCode' placeholder='Bitte Postleitzahl eingeben' value={PostalCode} onChange={onChange} />
+            <input type="text" className="form-control" id="City" name='City' placeholder='Bitte Stadt/Dorf eingeben' value={City} onChange={onChange} />
+          </div>
+          <div className="form-group">
+            <input type="text" className="form-control" id="Country" name='Country' value={Country} placeholder='Bitte Land eingeben' onChange={onChange} />
+          </div>
+          <div className="form-group">
+            <button type="submit" className="btn btn-block">Speichern</button>
           </div>
         </form>
       </section>

@@ -48,19 +48,10 @@ function NewCustomer() {
   }, [user, navigate])
 
   const onChange = (e) => {
-    if(e.target.name === 'TelNum'){
-      setformCustomerData((prevState) => ({
-        ...prevState,
-        [e.target.name]: formatPhoneNumber(e.target.value),
-      }))
-    }
-    else
-    {
-      setformCustomerData((prevState) => ({
-        ...prevState,
-        [e.target.name]: e.target.value,
-      }))
-    }
+    setformCustomerData((prevState) => ({
+      ...prevState,
+      [e.target.name]: e.target.value,
+    }))
   }
 
   const onSubmit = (e) => {
@@ -90,7 +81,7 @@ function NewCustomer() {
             <input type="date" className="form-control" id="Birthday" name='Birthday' value={Birthday} onChange={onChange} />
           </div>
           <div className="form-group">
-            <PhoneInput defaultCountry='AT' placeholder="Bitte Telefonnummer eingeben" id="TelNum" name='TelNum' value={TelNum} onChange={onChange}/>
+            <PhoneInput defaultCountry='AT' placeholder="Bitte Telefonnummer eingeben" value={formCustomerData.TelNum} onChange={(e) => setformCustomerData({ ...formCustomerData, TelNum: e.target.value})}/>
           </div>
           <h4>Adresse</h4>
           <div className="form-group">

@@ -47,10 +47,25 @@ function Register() {
   const onSubmit = (e) => {
     e.preventDefault()
 
-    if(password !== password2)
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+    if(email.match(validRegex) == null)
     {
-      toast.error('Passwords do not match')
+      toast.error('Email ist ungültig')
+      dispatch(reset())
+      setFormData((prevState) => ({
+        ...prevState,
+        [e.target.name]: "",
+      }))
+      return
     }
+    else if(password !== password2)
+    {
+      toast.error('Passwwort stimmt nicht überein')
+    }
+    else if(name==""){
+      toast.error('Name ungültig')
+    } //Überprüfen ob Passwort eine entsprechende Stärke besitzt 
     else
     {
       const userData = {

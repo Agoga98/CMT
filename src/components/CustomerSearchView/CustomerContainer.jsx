@@ -37,8 +37,19 @@ function CustomerContainer() {
       <input type="text" placeholder="Suchen..." onChange={event => {setSearchTerm(event.target.value)}}/>
       <div className='customer-item-container'>
         {
-          customers.filter(
-            ).map((val, key) => {
+          customers.filter((val) => {
+            if(searchTerm == ""){
+              return val
+            }
+            else if(val.LastName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    val.FirstName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    val.Email.toLowerCase().includes(searchTerm.toLowerCase()) || 
+                    val.TelNum.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    val.CustomerID.toLowerCase().includes(searchTerm.toLowerCase()))
+            {
+              return val
+            }
+          }).map((val, key) => {
             return <CustomerViewItem lastname={val.LastName} firstname={val.FirstName} email={val.Email} phonenumber={val.TelNum} id={val.CustomerID}/>
           })
         }

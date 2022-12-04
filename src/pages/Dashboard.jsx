@@ -3,6 +3,7 @@ import {useNavigate} from 'react-router-dom'
 import { useSelector} from 'react-redux'
 import CustomerContainer from '../components/CustomerSearchView/CustomerContainer'
 import BauvorhabenContainer from '../components/BauvorhabenContainer/BauvorhabenContainer'
+import BauvorhabenAnlegen from '../components/BauvorhabenContainer/BauvorhabenAnlegen'
 
 
 
@@ -22,7 +23,7 @@ function Dashboard() {
 
   return (
     <div className="customer-container">
-      <CustomerContainer/>
+      <BauvorhabenAnlegen/>
       <BauvorhabenContainer/>
     </div>
   )

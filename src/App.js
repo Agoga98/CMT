@@ -12,10 +12,8 @@ import Statistics from './pages/Statistics';
 const App = () => {
     
 
-    return(
-        
+    return( 
         <>
-        <h1>App</h1>
             <Router>
                 <div className='container'>
                     <Header/>

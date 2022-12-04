@@ -20,6 +20,23 @@ export const getAllConstructionProjects = createAsyncThunk('constructionProject/
 )
 
 //create constrution projects
+export const createConstructionProject = createAsyncThunk('constructionProject/getAll', 
+    async (customerID, thunkAPI) => {
+        try {
+            const token = thunkAPI.getState().auth.user.token
+            return await constructionProjectService.getConstructionProjects(customerID, token)
+          } catch (error) {
+            const message =
+              (error.response &&
+                error.response.data &&
+                error.response.data.message) ||
+              error.message ||
+              error.toString()
+            return thunkAPI.rejectWithValue(message)
+          }
+    }
+)
+
 //update constrution projects
 //delete constrution projects
 

@@ -164,7 +164,7 @@ h3 {
   padding: 10px 20px;
   border: 1px solid #000;
   border-radius: 5px;
-  background: #000;
+  background: rgba(0, 0, 0, 0.956);
   color: #fff;
   font-size: 16px;
   font-weight: 700;
@@ -192,6 +192,10 @@ h3 {
 
 .btn:hover {
   transform: scale(0.98);
+}
+
+.btn-w-link{
+  color: white;
 }
 
 .loadingSpinnerContainer {
@@ -263,13 +267,27 @@ h3 {
 }
 
 .customer-bvh-box {
+  display: flex;
+  position: relative;
   background-color: rgba(230, 230, 230, 0.5);
   width: 100%;
   margin-left: 10px;
-  padding: 5%;
+  padding: 50px;
   border: 2px solid #b23850;
   border-radius: 5px;
 }
+
+.customer-bvh-box-nav{
+  position: absolute;
+  margin-top: -50px;
+  margin-left: -50px;
+  width: 100%;
+  height: fit-content;
+  border: #b23850 solid 3px;
+  padding: 5px;
+  margin-bottom: 20px;
+}
+
 
 @keyframes spin {
   0% {

@@ -5,7 +5,8 @@ function BauvorhabenAnlegen() {
 
     <>
         <form>
-            
+            <label for="bvh_name">Name des Bauvorhaben</label>
+            <input type="text" id="bvh_name"/>
 
         </form>
     </>

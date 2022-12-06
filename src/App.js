@@ -1,6 +1,7 @@
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
 import {ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import BauvorhabenAnlegen from './components/BauvorhabenContainer/BauvorhabenAnlegen';
 import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
@@ -24,6 +25,7 @@ const App = () => {
                         <Route path='/newcustomer' element={<NewCustomer/>}/>
                         <Route path='/settings' element={<Settings/>}/>
                         <Route path='/statistics' element={<Statistics/>}/>
+                        <Route path='/newproject' element={<BauvorhabenAnlegen/>}/>
                     </Routes>
                 </div> 
             </Router>

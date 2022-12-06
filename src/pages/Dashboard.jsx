@@ -4,6 +4,7 @@ import { useSelector} from 'react-redux'
 import CustomerContainer from '../components/CustomerSearchView/CustomerContainer'
 import BauvorhabenContainer from '../components/BauvorhabenContainer/BauvorhabenContainer'
 import BauvorhabenAnlegen from '../components/BauvorhabenContainer/BauvorhabenAnlegen'
+import { Link } from 'react-router-dom'
 
 
 
@@ -23,7 +24,8 @@ function Dashboard() {
 
   return (
     <div className="customer-container">
-      <BauvorhabenAnlegen/>
+      
+      
       <BauvorhabenContainer/>
     </div>
   )

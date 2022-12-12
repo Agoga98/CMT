@@ -4,6 +4,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import {useSelector, useDispatch} from 'react-redux'
 import {logout, reset} from '../features/auth/authSlice'
 
+
 function Header() {
   const navigate = useNavigate()
   const dispatch = useDispatch()
@@ -25,12 +26,12 @@ const onLogout = () => {
             <ul>
                 <li>
                     <Link to='/'>
-                        <FaHome /> Home    
+                        <FaHome /> Dashboard    
                     </Link>
                 </li>
                 <li>
-                    <Link to='/newcustomer'>
-                        <FaUserPlus /> Neuer Kunde    
+                    <Link to='/customerOverview'>
+                        <FaUser /> Kundenübersicht    
                     </Link>
                 </li>
                 <li>

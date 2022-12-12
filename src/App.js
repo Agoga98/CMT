@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Header from './components/Header';
 import Dashboard from './pages/Dashboard';
 import Login from './pages/Login';
+import CustomerOverview from './pages/CustomerOverview';
 import NewCustomer from './pages/NewCustomer';
 import Register from './pages/Register';
 import Settings from './pages/Settings';
@@ -21,7 +22,7 @@ const App = () => {
                         <Route path='/' element={<Dashboard/>}/>
                         <Route path='/login' element={<Login/>}/>
                         <Route path='/register' element={<Register/>}/>
-                        <Route path='/newcustomer' element={<NewCustomer/>}/>
+                        <Route path='/customeroverview' element={<CustomerOverview customerID={"622b3da245549725c3463026"}/>}/>
                         <Route path='/settings' element={<Settings/>}/>
                         <Route path='/statistics' element={<Statistics/>}/>
                     </Routes>

@@ -2,7 +2,7 @@ import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import projectService from './projectService'
 
 //getall constrution projects
-export const getAllProjects = createAsyncThunk('project/getProjects', 
+export const getProjects = createAsyncThunk('project/getProjects', 
     async (_, thunkAPI) => {
         try {
             const token = thunkAPI.getState().auth.user.token
@@ -80,7 +80,7 @@ export const ProjectSlice = createSlice({
             .addCase(getProjects.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = true
-                state.customers = action.payload
+                state.projects = action.payload
             })
             .addCase(getProjects.rejected, (state, action) => {
                 state.isLoading = false
@@ -93,7 +93,7 @@ export const ProjectSlice = createSlice({
             .addCase(getProjectsbyCustomerID.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = true
-                state.customers = action.payload
+                state.projects = action.payload
             })
             .addCase(getProjectsbyCustomerID.rejected, (state, action) => {
                 state.isLoading = false
@@ -106,7 +106,6 @@ export const ProjectSlice = createSlice({
             .addCase(createProject.fulfilled, (state, action) => {
                 state.isLoading = false
                 state.isSuccess = true
-                state.customers = action.payload
             })
             .addCase(createProject.rejected, (state, action) => {
                 state.isLoading = false

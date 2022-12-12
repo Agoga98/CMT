@@ -17,15 +17,16 @@ const getProjects = async ( token) => {
 
 // Get projects by CustomerID
 const getProjectsByCustomerID = async (customerID, token) => {
-    const config = {
+
+  const config = {
       headers: {
         Authorization: `Bearer ${token}`,
       }
     }
 
-    API_URL = API_URL + ":" + customerID
-  
-    const response = await axios.get(API_URL, config)
+
+    const url = API_URL + customerID
+    const response = await axios.get(url, config)
   
     return response.data
   }

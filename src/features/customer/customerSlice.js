@@ -1,8 +1,6 @@
 import {createSlice, createAsyncThunk} from '@reduxjs/toolkit'
 import customerService from './customerService'
 
-const API_URL = '/api/customers/'
-
 //getall customers
 export const getallCustomers = createAsyncThunk('customer/getAll', 
     async (_, thunkAPI) => {

@@ -81,7 +81,7 @@ function NewCustomer() {
             <input type="date" className="form-control" id="Birthday" name='Birthday' value={Birthday} onChange={onChange} />
           </div>
           <div className="form-group">
-            <PhoneInput defaultCountry='AT' placeholder="Bitte Telefonnummer eingeben" value={formCustomerData.TelNum} onChange={(e) => setformCustomerData({ ...formCustomerData, TelNum: e.target.value})}/>
+            <input type="text" id="Birthday" name='Phonenumber' placeholder="Bitte Telefonnummer eingeben" value={formCustomerData.TelNum} onChange={(e) => setformCustomerData({ ...formCustomerData, TelNum: e.target.value})}/>
           </div>
           <h4>Adresse</h4>
           <div className="form-group">

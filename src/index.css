@@ -57,10 +57,9 @@ h3 {
 
 .container {
   max-width: 100%;
-  min-width: 1200px;
-  margin: 10px;
+  margin: 20px;
   padding: 0 20px;
-  text-align: center;
+ 
 }
 
 .header {
@@ -267,25 +266,117 @@ h3 {
 }
 
 .customer-bvh-box {
+  justify-content: space-evenly;
   display: flex;
-  position: relative;
+  overflow-y: auto;
   background-color: rgba(230, 230, 230, 0.5);
   width: 100%;
+  min-height:0;
   margin-left: 10px;
-  padding: 50px;
   border: 2px solid #b23850;
   border-radius: 5px;
+  flex-direction:column;
 }
 
+.bvh-cards-box{
+  flex: 1;
+  display:flex;
+  overflow: auto;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction:row;
+  gap: 10px;
+  border: #ffffff solid 0.2px;
+  padding: 20px 0 20px 0;
+
+}
 .customer-bvh-box-nav{
-  position: absolute;
-  margin-top: -50px;
-  margin-left: -50px;
+  display: flex;
+  float: left;
   width: 100%;
-  height: fit-content;
-  border: #b23850 solid 3px;
+  height:70px;
+  border: #b23850 solid 2px;
+  border-radius: 0.375rem;
   padding: 5px;
   margin-bottom: 20px;
+}
+
+
+.bvh-project-card  {
+  background-color: #f2f2f2;
+  display: flex;
+  flex-basis: 21%;
+  flex-grow: 1;
+  flex-shrink: 0;
+  align-self: flex-start;
+  border: #b23850 solid 2px;
+  min-width: 450px;
+  min-height: 500px;
+}
+.cardhead{
+  
+  background-color: #b23850;
+  padding: 25px;
+  color: white;
+  
+}
+.cardbody{
+
+}
+
+.cardfooter{
+  color:white;
+  background-color: #b23850;
+  padding-top: 1em;
+  border-radius: 1px;
+}
+
+
+.updatedate{
+display:grid;
+position: relative;
+align-content: center;
+}
+
+
+.cardhead:first-child{
+  border-radius: 0;
+}
+
+.cardtitle {
+  font-size:30px;
+  font-weight: 500;
+  
+}
+
+.cardsubtitle{
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.progress{
+  margin-top:1em;
+}
+.progress-bar{
+  
+  background-color:#00000C;
+}
+
+
+
+
+.add-project-button{
+  
+}
+
+@media screen and (min-width:0px) and (max-width:1200px) {
+
+  .bvh-project-card{
+   
+    flex-basis: 40%;
+   
+  }
+  
 }
 
 
@@ -311,3 +402,5 @@ h3 {
     font-size: 1.5rem;
   }
 }
+
+

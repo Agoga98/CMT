@@ -22,12 +22,9 @@ function Dashboard() {
 
   }, [user, navigate])
 
+
   return (
-    <div className="customer-container">
-      
-      
       <BauvorhabenContainer/>
-    </div>
   )
 }
 
